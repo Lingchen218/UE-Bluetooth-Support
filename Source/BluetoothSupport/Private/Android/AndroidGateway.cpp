@@ -6,7 +6,7 @@
 * Copyright (c) 2018 hishri.com
 */
 
-#pragma once	
+
 #include "AndroidGateway.h"
 #include "Runtime/Engine/Classes/Kismet/KismetSystemLibrary.h"
 #include "Async/Async.h"
@@ -245,7 +245,7 @@ static FCriticalSection ReceiversLock;
 
 extern "C"
 {
-	JNIEXPORT void Java_com_epicgames_ue4_GameActivity_scanNativeResultCallback(JNIEnv * jni, jclass clazz, jstring code)
+	JNIEXPORT void Java_com_epicgames_unreal_GameActivity_scanNativeResultCallback(JNIEnv * jni, jclass clazz, jstring code)
 	{
 		ReceiversLock.Lock();
 		const char* charsId = jni->GetStringUTFChars(code, 0);
@@ -259,12 +259,12 @@ extern "C"
 		ReceiversLock.Unlock();
 	}
 
-	JNIEXPORT void Java_com_epicgames_ue4_GameActivity_scanNativeFinishedCallback(JNIEnv * jni, jclass clazz)
+	JNIEXPORT void Java_com_epicgames_unreal_GameActivity_scanNativeFinishedCallback(JNIEnv * jni, jclass clazz)
 	{
 		CALL_BLSUPPORTMODULE_METHOD(TriggerDeviceScanFinishDelegates());
 	}
 
-	JNIEXPORT void Java_com_epicgames_ue4_GameActivity_printDebugUEMessage(JNIEnv * jni, jclass clazz, jstring message)
+	JNIEXPORT void Java_com_epicgames_unreal_GameActivity_printDebugUEMessage(JNIEnv * jni, jclass clazz, jstring message)
 	{
 		const char* charsId = jni->GetStringUTFChars(message, 0);
 

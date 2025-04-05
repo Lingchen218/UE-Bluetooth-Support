@@ -19,7 +19,7 @@
             "Name": "BluetoothSupport",
             "Type": "Runtime",
             "LoadingPhase": "PostConfigInit",
-            "WhitelistPlatforms": [ "Win64", "Win32", "Mac", "IOS", "Android" ]
+            "WhitelistPlatforms": [ "Win64", "Mac", "IOS", "Android" ]
         }
     ],
     "EnabledByDefault": true

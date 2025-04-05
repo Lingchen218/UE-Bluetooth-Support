@@ -8,7 +8,9 @@
 
 
 #include "BluetoothSupport.h"
-#include "Android/AndroidGateway.h"
+#if PLATFORM_ANDROID
+	#include "Android/AndroidGateway.h"
+#endif
 
 IMPLEMENT_MODULE(FBluetoothSupportModule, BluetoothSupport)
 
